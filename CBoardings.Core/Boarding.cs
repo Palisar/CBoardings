@@ -33,7 +33,7 @@ namespace CBoardings.Core
 
         //public string SeaArea { get; set; } //TODO : Write Logic to determine sea area from Lat/Long
         [Required]
-        public DateTime BoardingTime { get; set; } = DateTime.Now;
+        public DateTime BoardingTime { get; set; } = DateTime.Parse(DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss"));
         [Required]
         public string Description { get; set; }
         public bool IsArrested { get; set; } = false;
