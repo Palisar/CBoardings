@@ -9,7 +9,7 @@ namespace CBoardings.Core
 {
     public class Boarding
     {
-        public Guid Id { get; init; }
+        public Guid Id { get; init; } = Guid.NewGuid();
 
         [Required]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:D2}")]

@@ -1,8 +1,12 @@
 var builder = WebApplication.CreateBuilder(args);
-
+var connectionString = builder.Configuration.GetConnectionString("BoardingDbContext");
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddSingleton<IBoardingData, InMemoryBoardingData>();
+//builder.Services.AddSingleton<IBoardingData, InMemoryBoardingData>();// In memory data for testing purposes
+builder.Services.AddScoped<IBoardingData, SqlBoardingData>();
+builder.Services.AddDbContext<BoardingDbContext>(options =>
+    options.UseSqlServer(connectionString)
+    );
 
 var app = builder.Build();
 

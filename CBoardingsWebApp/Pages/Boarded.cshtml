@@ -2,12 +2,12 @@
 @model CBoardings.WebApp.Pages.BoardedModel
 @{
 }
-<h1 class="display-4">Boarding Information</h1>
+<h2 class="display-4">Boarding Information</h2>
 
-<form method="post" style="align-content:flex-start">
+<form method="post" class="form-control alert-info">
 
     <input type="hidden" asp-for="Boarding.Id" />
-    <div class="container" >
+    <div>
         <label>Lat</label>
         <div class="row">
             <div class="col-3 m-2 offset-1">
@@ -37,17 +37,19 @@
         </div>
 
         <label>What happened... </label>
-        <div class="align-content-lg-stretch">
-            <textarea placeholder="Describe your incident..." required="true" cols="50" rows="15" asp-for="Boarding.Description"></textarea>
+        <div class="form-group flex-fill">
+            <textarea placeholder="Describe your incident..." style="resize:none" required="true" cols="50" rows="15" asp-for="Boarding.Description"></textarea>
             <span class="text-danger" asp-validation-for="Boarding.Description"></span>
         </div>
         <div class="form-group">
-                <label asp-for="Boarding.BoardingTime" class="control-label"></label>
-                <input asp-for="Boarding.BoardingTime" class="form-control" />
-                <span asp-validation-for="Boarding.BoardingTime" class="text-danger"></span>
-            </div>
+            <label asp-for="Boarding.BoardingTime" class="control-label"></label>
+            <input asp-for="Boarding.BoardingTime" class="form-control" />
+            <span asp-validation-for="Boarding.BoardingTime" class="text-danger"></span>
+        </div>
+
+        <div class="mt-2 btn-group">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
     </div>
-    <div class="btn-group">
-        <button type="submit" class="btn btn-primary">Save</button>
-    </div>
+
 </form>

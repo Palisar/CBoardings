@@ -6,6 +6,7 @@ namespace CBoardings.WebApp.Pages
     public class BoardedModel : PageModel
     {
         private readonly IBoardingData _boardingData;
+
         [BindProperty]
         public Boarding Boarding { get; set; }
         public BoardedModel(IBoardingData boardingData)
