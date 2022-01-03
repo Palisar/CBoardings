@@ -4,6 +4,7 @@ using CBoardings.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CBoardings.Data.Migrations
 {
     [DbContext(typeof(BoardingDbContext))]
-    partial class BoardingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220103193638_alteredBoardingModel")]
+    partial class alteredBoardingModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

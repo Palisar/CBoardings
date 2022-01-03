@@ -7,7 +7,7 @@
 <div class="text-center">
     <h1 class="display-4">Were you Boarded?</h1>
     <span class="btn-group">
-        <a class="btn btn-danger" asp-page="./Boarded">
+        <a class="btn btn-danger" asp-page="./Boarded/Boarded">
             Boarded<i>⚓</i></a>
     </span>
     
@@ -16,17 +16,7 @@
     
     @foreach(var boarding in Model.Boardings)
     {
-        <div class="border-info" style="align-items:center">
-            <table class="table table-boardered">
-                <tr>
-                    <td>@boarding.BoardingTime</td>
-                    <td>@boarding.LatDeg &ordm; @boarding.LatMin 'N</td>
-                    <td>@boarding.LongDeg &ordm; @boarding.LongMin 'N</td>
-                </tr>
-            </table>
-                
-        </div>
-        <p>@boarding.Description</p>
+        <partial name="_Summary" model="boarding"/>
     }
       
 

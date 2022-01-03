@@ -20,6 +20,11 @@
                 <input asp-for="Boarding.LatMin" class="form-control" />
                 <span class="text-danger" asp-validation-for="Boarding.LatMin"></span>
             </div>
+            <div class="col-3 m-2">
+                <label>North/South</label>
+                <select asp-for="Boarding.NS"
+                        asp-items="Model.CompassNS" class="form-control"></select>
+            </div>
         </div>
 
         <div class="row">
@@ -33,6 +38,11 @@
                 <label>Min</label>
                 <input asp-for="Boarding.LongMin" class="form-control" />
                 <span class="text-danger" asp-validation-for="Boarding.LongMin"></span>
+            </div>
+            <div class="col-3 m-2">
+                <label>East/West</label>
+                <select asp-for="Boarding.EW"
+                        asp-items="Model.CompassEW" class="form-control"></select>
             </div>
         </div>
 

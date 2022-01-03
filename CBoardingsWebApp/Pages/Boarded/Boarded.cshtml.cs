@@ -1,20 +1,28 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CBoardings.WebApp.Pages
 {
     public class BoardedModel : PageModel
     {
         private readonly IBoardingData _boardingData;
+        private readonly IHtmlHelper htmlHelper;
 
         [BindProperty]
         public Boarding Boarding { get; set; }
-        public BoardedModel(IBoardingData boardingData)
+        public IEnumerable<SelectListItem> CompassNS { get; set; }
+        public IEnumerable<SelectListItem> CompassEW { get; set; }
+        public BoardedModel(IBoardingData boardingData, IHtmlHelper htmlHelper)
         {
-            _boardingData = boardingData;;
+            _boardingData = boardingData;
+            this.htmlHelper = htmlHelper;
+            ;
         }
         public IActionResult OnGet()
         {
+            CompassNS = htmlHelper.GetEnumSelectList<CompassNS>();
+            CompassEW = htmlHelper.GetEnumSelectList<CompassEW>();
             Boarding = new Boarding();
             return Page();
         }
@@ -26,7 +34,7 @@ namespace CBoardings.WebApp.Pages
                 return Page();
             }
             _boardingData.AddBoarding(Boarding);
-            return RedirectToPage("./Index");
+            return RedirectToPage("../Index");
             
         }
     }
