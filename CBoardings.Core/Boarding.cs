@@ -44,7 +44,7 @@ namespace CBoardings.Core
         public string Description { get; set; }
         public string Position
         {
-            get { return $"{LatDeg}°{LatMin}'{NS.ToString()}\n  {LongDeg}°{LongMin}'{EW.ToString()}";}
+            get { return $"{LatDeg.ToString("D2")}°{LatMin.ToString("D2")}'{NS.ToString()}\n  {LongDeg.ToString("D3")}°{LongMin.ToString("D2")}'{EW.ToString()}";}
         }
         public bool IsArrested { get; set; } = false;
     }
