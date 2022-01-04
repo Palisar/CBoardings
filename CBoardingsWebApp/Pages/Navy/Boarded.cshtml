@@ -1,0 +1,65 @@
+﻿@page "{boardingId:Guid?}"
+@model CBoardings.WebApp.Pages.BoardedModel
+@{
+}
+<h2 class="display-4">Boarding Information</h2>
+
+<form method="post" class="form-control alert-info">
+
+    <input type="hidden" asp-for="Boarding.Id" />
+    <div>
+        <label>Lat</label>
+        <div class="row">
+            <div class="col-3 m-2 offset-1">
+                <label>Deg</label>
+                <input asp-for="Boarding.LatDeg" class="form-control" />
+                <span class="text-danger" asp-validation-for="Boarding.LatDeg"></span>
+            </div>
+            <div class="col-3 m-2">
+                <label class="text-bold">Min</label>
+                <input asp-for="Boarding.LatMin" class="form-control" />
+                <span class="text-danger" asp-validation-for="Boarding.LatMin"></span>
+            </div>
+            <div class="col-3 m-2">
+                <label>North/South</label>
+                <select asp-for="Boarding.NS"
+                        asp-items="Model.CompassNS" class="form-control"></select>
+            </div>
+        </div>
+
+        <div class="row">
+            <label>Long</label>
+            <div class="col-3 m-2">
+                <label>Deg</label>
+                <input asp-for="Boarding.LongDeg" class="form-control" />
+                <span class="text-danger" asp-validation-for="Boarding.LongDeg"></span>
+            </div>
+            <div class="col-3 m-2">
+                <label>Min</label>
+                <input asp-for="Boarding.LongMin" class="form-control" />
+                <span class="text-danger" asp-validation-for="Boarding.LongMin"></span>
+            </div>
+            <div class="col-3 m-2">
+                <label>East/West</label>
+                <select asp-for="Boarding.EW"
+                        asp-items="Model.CompassEW" class="form-control"></select>
+            </div>
+        </div>
+
+        <label>What happened... </label>
+        <div class="form-group flex-fill">
+            <textarea placeholder="Describe your incident..." style="resize:none" required="true" cols="50" rows="15" asp-for="Boarding.Description"></textarea>
+            <span class="text-danger" asp-validation-for="Boarding.Description"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Boarding.BoardingTime" class="control-label"></label>
+            <input asp-for="Boarding.BoardingTime" class="form-control" />
+            <span asp-validation-for="Boarding.BoardingTime" class="text-danger"></span>
+        </div>
+
+        <div class="mt-2 btn-group">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+</form>
+ <a class="btn btn-info m-2" asp-page="/Index" >Return to Boarding List</a>
