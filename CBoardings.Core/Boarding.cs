@@ -39,12 +39,12 @@ namespace CBoardings.Core
 
         //public string SeaArea { get; set; } //TODO : Write Logic to determine sea area from Lat/Long
         [Required]
-        public DateTime BoardingTime { get; set; } = DateTime.Parse(DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss"));
+        public DateTime BoardingTime { get; set; } = DateTime.Parse(DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm"));
         [Required]
         public string Description { get; set; }
         public string Position
         {
-            get { return $"{LatDeg}°{LatMin}'{NS.ToString()}\n  {LongDeg}°{LongMin}'{EW.ToString()}";}
+            get { return $"{LatDeg.ToString("D2")}°{LatMin.ToString("D2")}'{NS.ToString()}     {LongDeg.ToString("D3")}°{LongMin.ToString("D2")}'{EW.ToString()}";}
         }
         public bool IsArrested { get; set; } = false;
     }
