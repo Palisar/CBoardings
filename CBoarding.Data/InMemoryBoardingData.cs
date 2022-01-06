@@ -23,6 +23,17 @@
         {
             return 0;
         }
+
+        public Boarding Delete(Guid boardingId)
+        {
+            var boarding = boardings.Find(b => b.Id == boardingId);
+            if (boarding is not null)
+            {
+                boardings.Remove(boarding);
+            }
+            return boarding;
+        }
+
         public Boarding GetBoardingById(Guid boardingId)
         {
             return boardings.SingleOrDefault(b => b.Id == boardingId);

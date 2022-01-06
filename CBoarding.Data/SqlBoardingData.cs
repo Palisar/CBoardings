@@ -21,6 +21,16 @@
 
         }
 
+        public Boarding Delete(Guid boardingId)
+        {
+            var boarding = GetBoardingById(boardingId);
+            if (boarding is not null)
+            {
+                dbContext.Boardings.Remove(boarding);
+            }
+            return boarding;
+        }
+
         public Boarding GetBoardingById(Guid boardingId)
         {
             return dbContext.Boardings.Find(boardingId);

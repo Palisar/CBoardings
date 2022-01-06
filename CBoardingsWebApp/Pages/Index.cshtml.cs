@@ -18,7 +18,7 @@ namespace CBoardingsWebApp.Pages
 
         public void OnGet()
         {
-            Boardings = _boardingData.GetBoardings();
+            Boardings = _boardingData.GetBoardings().OrderByDescending(x => x.BoardingTime);
         }
     }
 }

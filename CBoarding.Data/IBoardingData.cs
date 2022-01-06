@@ -13,6 +13,8 @@ namespace CBoardings.Data
 
         Boarding RemoveBoarding(Guid boardingId);
         Boarding GetBoardingById(Guid boardingId);
+
+        Boarding Delete(Guid boardingId);
         public int Commit();
     }
 }
