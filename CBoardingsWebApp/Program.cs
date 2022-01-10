@@ -1,5 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("BoardingDbContext");
+//var connectionString = builder.Configuration.GetConnectionString("BoardingDbContext"); //Home Database
+var connectionString = builder.Configuration.GetConnectionString("BoardingDbContextLap"); //Laptop Database
 // Add services to the container.
 builder.Services.AddRazorPages();
 
