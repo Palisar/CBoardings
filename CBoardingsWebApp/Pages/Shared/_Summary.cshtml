@@ -1,33 +1,25 @@
 ﻿@model Boarding
 
-<div class="card mt-3 mb-3">
+<div class="card mt-3 mb-3 opacity-75">
     <div class="card-title p-3">
-        <h3>@Model.BoardingTime</h3>
-        <h4>@Model.Position</h4>
+        <p>@Model.BoardingTime</p>
+        <h4 style="text-align:end">@Model.Position</h4>
     </div>
     <div class="card-body">
-        <span>@Model.Description</span>
-        
+        <span class="card-body">@Model.Description</span>
+
     </div>
     <div class="card-footer">
         <a class="btn mb-1"
            asp-page="./Detail"
            asp-route-boardingId="@Model.Id">
             <i>
-                
+                🔍
             </i>
             Details
         </a>
         <a class="btn mb-1"
-           asp-page="./Edit"
-           asp-route-boardingId="@Model.Id">
-            <i>
-                📑
-            </i>
-            Edit
-        </a>
-        <a class="btn mb-1"
-           asp-page="./Delete"
+           asp-page="./Navy/Delete"
            asp-route-boardingId="@Model.Id">
             <i>
                 🗑️
