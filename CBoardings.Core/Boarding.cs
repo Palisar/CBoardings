@@ -44,7 +44,11 @@ namespace CBoardings.Core
         public string Description { get; set; }
         public string Position
         {
+<<<<<<< dev
             get { return $"{LatDeg.ToString("D2")}°{LatMin.ToString("D2")}'{NS.ToString()}     {LongDeg.ToString("D3")}°{LongMin.ToString("D2")}'{EW.ToString()}";}
+=======
+            get { return $"{LatDeg.ToString("D2")}°{LatMin.ToString("D2")}'{NS.ToString()}\n  {LongDeg.ToString("D3")}°{LongMin.ToString("D2")}'{EW.ToString()}";}
+>>>>>>> master
         }
         public bool IsArrested { get; set; } = false;
     }

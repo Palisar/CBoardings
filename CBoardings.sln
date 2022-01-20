@@ -7,9 +7,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CBoardings.WebApp", "CBoard
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CBoardings.Core", "CBoardings.Core\CBoardings.Core.csproj", "{2B8E9B69-37CE-424D-B514-FC2465759F03}"
 EndProject
+
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CBoardings.API", "CBoardings.API\CBoardings.API.csproj", "{9597364C-75E9-40DF-8A69-B3C6F2BCA025}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CBoardings.Data", "CBoarding.Data\CBoardings.Data.csproj", "{3CD7EF4C-F94E-4377-ABED-A5397B790232}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CBoarding.API", "CBoarding.API\CBoarding.API.csproj", "{E382F6FB-6179-497D-A852-EFC4260E770C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5ECFE1E3-470A-4DF8-BA30-81C7EC9F1E4D}"
+	ProjectSection(SolutionItems) = preProject
+		Todo.txt = Todo.txt
+	EndProjectSection
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
