@@ -6,6 +6,5 @@
         {
         }
         public DbSet<Boarding> Boardings { get; set; }
-
     }
 }

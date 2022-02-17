@@ -12,9 +12,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CBoardings.Data", "CBoarding.Data\CBoardings.Data.csproj", "{3CD7EF4C-F94E-4377-ABED-A5397B790232}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5ECFE1E3-470A-4DF8-BA30-81C7EC9F1E4D}"
-	ProjectSection(SolutionItems) = preProject
-		Todo.txt = Todo.txt
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CBoardings.WebApp.Pages
 {
+    [Authorize]
     public class BoardedModel : PageModel
     {
         private readonly IBoardingData _boardingData;
@@ -17,7 +19,6 @@ namespace CBoardings.WebApp.Pages
         {
             _boardingData = boardingData;
             this.htmlHelper = htmlHelper;
-            ;
         }
         public IActionResult OnGet()
         {
@@ -35,7 +36,6 @@ namespace CBoardings.WebApp.Pages
             }
             _boardingData.AddBoarding(Boarding);
             return RedirectToPage("../Index");
-            
         }
     }
 }

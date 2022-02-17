@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CBoardings.WebApp.Controllers
 {
@@ -15,7 +16,7 @@ namespace CBoardings.WebApp.Controllers
         {
             await HttpContext.SignOutAsync(new AuthenticationProperties()
             {
-                RedirectUri = Url.Page("Index")
+                RedirectUri = Url.Page("/Index")
             });
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         }
